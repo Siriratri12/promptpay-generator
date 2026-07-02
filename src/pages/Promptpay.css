@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Noto+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap");
+
+:root {
+  --pp-paper: #f2eee2;
+  --pp-paper-shade: #e7e0ce;
+  --pp-page: #dcd5c2;
+  --pp-ink: #221f19;
+  --pp-ink-soft: #726b5b;
+  --pp-ink-faint: #a39c89;
+  --pp-purple: #3f2470;
+  --pp-err: #a32d2d;
+  --pp-err-bg: #fcebeb;
+  --pp-ok: #3b6d11;
+  --pp-ok-bg: #eaf3de;
+}
+
+.pp-page {
+  display: flex;
+  justify-content: center;
+  padding: 24px 12px;
+  background: var(--pp-page);
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(34, 31, 25, 0.07) 1px,
+    transparent 1.6px
+  );
+  background-size: 22px 22px;
+  font-family: "Noto Sans Thai", sans-serif;
+  color: var(--pp-ink);
+}
+
+.pp-receipt {
+  width: 100%;
+  max-width: 420px;
+  background: var(--pp-paper);
+  box-shadow: 0 18px 40px -18px rgba(34, 31, 25, 0.35);
+}
+
+.pp-zig {
+  height: 12px;
+  background:
+    linear-gradient(135deg, transparent 50%, var(--pp-page) 50%) 0 0/14px 14px,
+    linear-gradient(-135deg, transparent 50%, var(--pp-page) 50%) 0 0/14px 14px;
+  background-repeat: repeat-x;
+}
+
+.pp-zig-bottom {
+  transform: rotate(180deg);
+}
+
+.pp-inner {
+  padding: 26px 26px 24px;
+}
+
+.pp-barcode {
+  height: 26px;
+  margin-bottom: 18px;
+  opacity: 0.85;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--pp-ink) 0 2px,
+    transparent 2px 5px,
+    var(--pp-ink) 5px 6px,
+    transparent 6px 11px,
+    var(--pp-ink) 11px 14px,
+    transparent 14px 17px,
+    var(--pp-ink) 17px 18px,
+    transparent 18px 24px
+  );
+}
+
+.pp-brand-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.pp-h1 {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.02em;
+  margin: 0;
+  color: var(--pp-purple);
+}
+
+.pp-tag {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--pp-ink-soft);
+  border: 1px solid var(--pp-ink-faint);
+  padding: 2px 6px;
+  border-radius: 20px;
+}
+
+.pp-sub {
+  font-size: 13px;
+  color: var(--pp-ink-soft);
+  margin: 2px 0 20px;
+}
+
+.pp-field {
+  margin-bottom: 16px;
+}
+
+.pp-label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--pp-ink-soft);
+  margin-bottom: 6px;
+}
+
+.pp-badge-type {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10.5px;
+  padding: 2px 7px;
+  border-radius: 20px;
+  background: var(--pp-ok-bg);
+  color: var(--pp-ok);
+  margin-left: 8px;
+}
+
+.pp-input {
+  width: 100%;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 16px;
+  padding: 11px 12px;
+  background: #fff;
+  border: 1.5px solid var(--pp-ink-faint);
+  border-radius: 8px;
+  color: var(--pp-ink);
+  letter-spacing: 0.02em;
+  box-sizing: border-box;
+}
+
+.pp-input:focus {
+  outline: none;
+  border-color: var(--pp-purple);
+}
+
+.pp-hint {
+  font-size: 11.5px;
+  margin-top: 5px;
+  min-height: 14px;
+  color: var(--pp-ink-faint);
+}
+
+.pp-hint-err {
+  color: var(--pp-err);
+}
+
+.pp-hint-ok {
+  color: var(--pp-ok);
+}
+
+.pp-btn-generate {
+  width: 100%;
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 600;
+  font-size: 15.5px;
+  letter-spacing: 0.02em;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background: var(--pp-purple);
+  color: var(--pp-paper);
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+.pp-btn-generate:disabled {
+  background: var(--pp-ink-faint);
+  cursor: not-allowed;
+}
+
+.pp-btn-generate:active:not(:disabled) {
+  transform: scale(0.99);
+}
+
+.pp-divider {
+  border: none;
+  border-top: 1.5px dashed var(--pp-ink-faint);
+  margin: 22px 0;
+}
+
+.pp-output {
+  display: none;
+}
+
+.pp-output.show {
+  display: block;
+}
+
+.pp-qr-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+  background: #fff;
+  border: 1.5px solid var(--pp-ink-faint);
+  border-radius: 10px;
+}
+
+.pp-amount-line {
+  text-align: center;
+  margin: 16px 0 4px;
+}
+
+.pp-amount-label {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--pp-ink-soft);
+  text-transform: uppercase;
+}
+
+.pp-amount-value {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 600;
+  font-size: 26px;
+}
+
+.pp-recv-line {
+  text-align: center;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 13px;
+  color: var(--pp-ink-soft);
+  margin-bottom: 6px;
+}
+
+.pp-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.pp-action-btn {
+  flex: 1;
+  background: transparent;
+  color: var(--pp-purple);
+  border: 1.5px solid var(--pp-purple);
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 600;
+  font-size: 13.5px;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.pp-payload-box {
+  margin-top: 18px;
+  background: var(--pp-paper-shade);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10.5px;
+  line-height: 1.5;
+  word-break: break-all;
+  color: var(--pp-ink-soft);
+}
+
+.pp-footnote {
+  font-size: 11px;
+  color: var(--pp-ink-faint);
+  text-align: center;
+  margin-top: 18px;
+  line-height: 1.6;
+}
