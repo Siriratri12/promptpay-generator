@@ -8,6 +8,7 @@ export default function App() {
       <Route path="/" element={<Home />} />
       <Route path="/promptpay" element={<Promptpay />} />
       <Route path="/promptpay/:target" element={<Promptpay />} />
+      <Route path="/promptpay/:target/:amount" element={<Promptpay />} />
     </Routes>
   );
 }
